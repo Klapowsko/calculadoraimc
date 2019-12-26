@@ -20,7 +20,10 @@ class _HomeState extends State<Home> {
   void _resetFields() {
     weighController.text = "";
     heigthController.text = "";
-    _textResult = "Informe seus dados !";
+
+    setState(() {
+      _textResult = "Informe seus dados !";
+    });
   }
 
   void _calculate() {
@@ -97,10 +100,13 @@ class _HomeState extends State<Home> {
                 ),
               ),
             ),
-            Text(
-              _textResult,
-              textAlign: TextAlign.center,
-              style: TextStyle(color: Colors.green, fontSize: 25.0),
+            Padding(
+              padding: EdgeInsets.all(20),
+              child: Text(
+                _textResult,
+                textAlign: TextAlign.center,
+                style: TextStyle(color: Colors.green, fontSize: 25.0),
+              ),
             )
           ],
         ),
